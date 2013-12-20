@@ -7,3 +7,10 @@ var sendToCaret = function(command, argument) {
     chrome.runtime.sendMessage(id, message);
   });
 }
+function mainHandler(message, sender,c){
+  console.log(message,sender,c);
+}
+chrome.runtime.onMessageExternal.addListener(function(message, sender, c) {
+    mainHandler(message,sender,c);
+  });
+});
